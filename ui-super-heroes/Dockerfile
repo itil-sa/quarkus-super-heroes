@@ -11,7 +11,8 @@ RUN npm install
 COPY --chown=1001:1001 . $HOME/
 
 # Run build
-RUN npm run build && \
+RUN npm config set cache $HOME/npm-cache && \
+    npm run build && \
     npm prune --production
 
 # Second stage copies the application to the minimal image
