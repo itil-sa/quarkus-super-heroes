@@ -1,5 +1,6 @@
 # Quarkus Superheroes Sample
 
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project automation](docs/automation.md)
