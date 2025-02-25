@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Quarkus Super Heroes app
+  description: quarkus-super-heroes project to showcase ITIL approach   
+  links:
+    - url: https://devspaces.apps.andromeda.sandbox1562.opentlc.com/#https://github.com/itil-sa/quarkus-super-heroes
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+    - url: https://devspaces.apps.andromeda.sandbox1562.opentlc.com/#https://github.com/itil-sa/quarkus-super-heroes?che-editor=che-incubator/che-idea/latest
+      title: OpenShift Dev Spaces (JetBrains IntelliJ)
+      icon: web
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=quarkus-super-heroes
+    backstage.io/kubernetes-id: quarkus-super-heroes
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: quarkus-super-heroes
+    quay.io/repository-slug: itil_sa/quarkus-super-heroes
+  tags: ["java", "quarkus", "sscs", "sbom", "acs"] 
+spec:
+  type: service
+  owner: user:default/joelapatatechaude 
+  lifecycle: experimental
