@@ -1,0 +1,51 @@
+schemaVersion: 2.2.2
+metadata:
+  name: quarkus-super-heroes
+components:
+  - name: tools
+    container:
+      #image: registry.redhat.io/devspaces/udi-rhel9:3.18
+      #image: quay.io/devfile/universal-developer-image:ubi8-277c10c
+      image: quay.io/devfile/universal-developer-image:ubi9-25dc860
+      env:
+        - name: QUARKUS_HTTP_HOST
+          value: 0.0.0.0
+      endpoints:
+        - exposure: none
+          name: debug
+          protocol: tcp
+          targetPort: 5005
+        - exposure: public
+          name: hello-greeting
+          protocol: https
+          targetPort: 8081
+      volumeMounts:
+        - name: m2
+          path: /home/user/.m2
+      cpuLimit: '4'
+      cpuRequest: '0.5'
+      memoryLimit: '4G'
+      memoryRequest: '1G'
+      mountSources: true
+  - name: m2
+    volume:
+      size: 1G
+commands:
+  - id: 1-package
+    exec:
+      label: "1. Package the application"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: "mvn package"
+      group:
+        kind: build
+        isDefault: true
+  - id: 2-startdev
+    exec:
+      label: "2. Start Development mode (Hot reload + debug)"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: "mvn compile quarkus:dev"
+      group:
+        kind: run
+        isDefault: true
