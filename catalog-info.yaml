@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: Quarkus Super Heroes app
-  description: quarkus-super-heroes project to showcase ITIL approach   
+  name: quarkus-super-heroes-app
+  description: Quarkus Super Heroes project to showcase ITIL approach   
   links:
     - url: https://devspaces.apps.andromeda.sandbox1562.opentlc.com/#https://github.com/itil-sa/quarkus-super-heroes
       title: OpenShift Dev Spaces (VS Code)
