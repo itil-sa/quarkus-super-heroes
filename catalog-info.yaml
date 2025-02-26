@@ -12,7 +12,7 @@ metadata:
       icon: web
   annotations:
     # ArgoCD apps from this template used rhtap-gitops as the grouping
-    argocd/app-selector: rhtap/gitops=quarkus-super-heroes
+    argocd/app-selector: rhtap/gitops=summer-camp
     backstage.io/kubernetes-id: quarkus-super-heroes
     backstage.io/techdocs-ref: dir:. 
     janus-idp.io/tekton: quarkus-super-heroes
