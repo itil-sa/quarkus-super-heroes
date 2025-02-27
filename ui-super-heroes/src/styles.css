@@ -47,11 +47,11 @@ table {
 }
 
 .winner-hero {
-  color: dodgerblue;
+  color: rgb(232, 173, 10);
 }
 
 .winner-villain {
-  color: firebrick;
+  color: rgb(227, 198, 8);
 }
 
 .hero-winner-card {
@@ -100,11 +100,11 @@ table {
 }
 
 .hero {
-  color: rgb(54, 119, 68);
+  color: rgb(224, 198, 6);
 }
 
 .villain {
-  color: firebrick;
+  color: rgb(18, 2, 2);
 }
 
 .collapse {
